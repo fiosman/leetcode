@@ -12,3 +12,17 @@
 
 // Input: nums = [1,1,1,3,3,4,3,2,4,2]
 // Output: true
+
+const containsDuplicate = (nums) => {
+  // solution is O(n) time and O(n) space worst case.
+  let numsObj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (numsObj[nums[i]] === true) {
+      return true;
+    } else {
+      numsObj[nums[i]] = true;
+    }
+  }
+  return false;
+};
