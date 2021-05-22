@@ -18,6 +18,7 @@
 // Output: [3,4,6,16,17]
 
 const runningSum = (nums) => {
+  //Solution is O(n) time and O(1) space
   for (let i = 1; i < nums.length; i++) {
     nums[i] += nums[i - 1];
   }
