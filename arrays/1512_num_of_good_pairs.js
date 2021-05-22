@@ -33,11 +33,7 @@ const numIdenticalPairs = (nums) => {
   }
 
   for (let key in pairs) {
-    if (pairs[key] % 2 === 0 && pairs[key] > 1) {
-      counter++;
-    } else {
-      if (pairs[key] > 1) counter = counter + pairs[key];
-    }
+    counter = counter + (pairs[key] * (pairs[key] - 1)) / 2;
   }
 
   return counter;
