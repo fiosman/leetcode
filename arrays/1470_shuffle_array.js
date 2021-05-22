@@ -17,6 +17,7 @@
 // Output: [1,2,1,2]
 
 const shuffle = (nums, n) => {
+  //Solution is O(n) time and O(n) space
   let shuffledArray = [];
 
   for (let i = 0; i < n; i++) {
