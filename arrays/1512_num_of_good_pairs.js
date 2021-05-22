@@ -18,3 +18,27 @@
 
 // Input: nums = [1,2,3]
 // Output: 0
+
+const numIdenticalPairs = (nums) => {
+  // O(n) time and O(n) space
+  let pairs = {};
+  let counter = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (pairs[nums[i]]) {
+      pairs[nums[i]] += 1;
+    } else {
+      pairs[nums[i]] = 1;
+    }
+  }
+
+  for (let key in pairs) {
+    if (pairs[key] % 2 === 0 && pairs[key] > 1) {
+      counter++;
+    } else {
+      if (pairs[key] > 1) counter = counter + pairs[key];
+    }
+  }
+
+  return counter;
+};
