@@ -17,3 +17,20 @@
 
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
+
+const twoSum = (nums, target) => {
+  //Solution is O(n) time and O(n) space
+  const hash = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const num = target - nums[i];
+
+    if (nums[i] in hash) {
+      return [hash[nums[i]], i];
+    } else {
+      hash[num] = i;
+    }
+  }
+
+  return [];
+};
