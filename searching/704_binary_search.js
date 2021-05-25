@@ -14,6 +14,7 @@
 // Explanation: 2 does not exist in nums so return -1
 
 const binarySearch = (nums, target, lo = 0, hi = nums.length - 1) => {
+  //Time Complexity: O(log n), Space Complexity: O(log n)
   if (lo > hi) {
     return -1;
   }
