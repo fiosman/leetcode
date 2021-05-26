@@ -22,12 +22,19 @@
 
 // TODO: Implement a Linked List Node class here
 class Node {
-  constructor(val) {}
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
 }
 
 // TODO: Implement a Singly Linked List class here
 class LinkedList {
-  constructor() {}
+  constructor() {
+    this.tail = null;
+    this.head = null;
+    this.length = 0;
+  }
 
   // TODO: Implement the addToTail method here
   addToTail(val) {}
