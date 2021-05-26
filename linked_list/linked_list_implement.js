@@ -51,7 +51,7 @@ class LinkedList {
       this.length++;
       return this;
     } else {
-      oldHead = this.head;
+      const oldHead = this.head;
       this.head = newNode;
       this.head.next = oldHead;
       this.length++;
@@ -60,10 +60,36 @@ class LinkedList {
   }
 
   // TODO: Implement the removeHead method here
-  removeHead() {}
+  removeHead() {
+    if (this.length === 0) {
+      return undefined;
+    } else if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return;
+    }
+
+    const removedNode = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return removedNode;
+  }
 
   // TODO: Implement the contains method here
-  contains(target) {}
+  contains(target) {
+    let currNode = this.head;
+
+    while (currNode) {
+      if (currNode.val === target) {
+        return true;
+      } else {
+        currNode = currNode.next;
+      }
+    }
+
+    return false;
+  }
 
   // TODO: Implement the get method here
   get(index) {}
@@ -85,3 +111,12 @@ class LinkedList {
 
 exports.Node = Node;
 exports.LinkedList = LinkedList;
+
+const node1 = new Node(5);
+const node2 = new Node(6);
+const node3 = new Node(7);
+
+const linkedList = new LinkedList();
+linkedList.addToHead(5);
+linkedList.addToHead(6);
+linkedList.addToHead(7);
