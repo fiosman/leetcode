@@ -43,7 +43,21 @@ class LinkedList {
   removeTail() {}
 
   // TODO: Implement the addToHead method here
-  addToHead(val) {}
+  addToHead(val) {
+    const newNode = new Node(val);
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+      this.length++;
+      return this;
+    } else {
+      oldHead = this.head;
+      this.head = newNode;
+      this.head.next = oldHead;
+      this.length++;
+      return this;
+    }
+  }
 
   // TODO: Implement the removeHead method here
   removeHead() {}
@@ -64,7 +78,9 @@ class LinkedList {
   remove(index) {}
 
   // TODO: Implement the size method here
-  size() {}
+  size() {
+    return this.length;
+  }
 }
 
 exports.Node = Node;
