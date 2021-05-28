@@ -37,7 +37,18 @@ class LinkedList {
   }
 
   // TODO: Implement the addToTail method here
-  addToTail(val) {}
+  addToTail(val) {
+    const newNode = new Node(val);
+    if (this.length === 0) {
+      this.head = newNode;
+    } else {
+      this.tail.next = newNode;
+    }
+
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
 
   // TODO: Implement the removeTail method here
   removeTail() {}
