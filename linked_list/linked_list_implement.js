@@ -92,10 +92,33 @@ class LinkedList {
   }
 
   // TODO: Implement the get method here
-  get(index) {}
+  get(index) {
+    let currPos = 0;
+    let currNode = this.head;
+
+    while (currNode) {
+      if (currPos === index) {
+        return currNode;
+      } else {
+        currPos++;
+        currNode = currNode.next;
+      }
+    }
+
+    return null;
+  }
 
   // TODO: Implement the set method here
-  set(index, val) {}
+  set(index, val) {
+    const node = this.get(index);
+
+    if (node) {
+      node.val = val;
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // TODO: Implement the insert method here
   insert(index, val) {}
