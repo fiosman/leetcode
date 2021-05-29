@@ -51,7 +51,14 @@ class LinkedList {
   }
 
   // TODO: Implement the removeTail method here
-  removeTail() {}
+  removeTail() {
+    if (this.length === 1) return this.removeHead();
+    const nodeBeforeLast = this.get(this.length - 2);
+    nodeBeforeLast.next = null;
+    this.tail = nodeBeforeLast;
+    this.length--;
+    return this;
+  }
 
   // TODO: Implement the addToHead method here
   addToHead(val) {
@@ -150,7 +157,10 @@ class LinkedList {
   }
 
   // TODO: Implement the remove method here
-  remove(index) {}
+  remove(index) {
+    if (index === 0) return this.removeHead();
+    // if (index === this.length - 1) return this.removeTail();
+  }
 
   // TODO: Implement the size method here
   size() {
@@ -168,5 +178,4 @@ const node3 = new Node(7);
 const linkedList = new LinkedList();
 linkedList.addToHead(1);
 linkedList.addToHead(2);
-linkedList.insert(2, 3);
-console.log(linkedList);
+linkedList.addToHead(3);
