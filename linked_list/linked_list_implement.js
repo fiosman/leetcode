@@ -132,7 +132,22 @@ class LinkedList {
   }
 
   // TODO: Implement the insert method here
-  insert(index, val) {}
+  insert(index, val) {
+    if (index === 0) return this.addToHead(val);
+    if (index === this.length) return this.addToTail(val);
+
+    if (index < this.length - 1) {
+      const newNode = new Node(val);
+      const nodeBeforeNew = this.get(index - 1);
+      const nodeAfterNew = this.get(index + 1);
+
+      nodeBeforeNew.next = newNode;
+      newNode.next = nodeAfterNew;
+      this.length++;
+    } else {
+      return false;
+    }
+  }
 
   // TODO: Implement the remove method here
   remove(index) {}
@@ -151,6 +166,7 @@ const node2 = new Node(6);
 const node3 = new Node(7);
 
 const linkedList = new LinkedList();
-linkedList.addToHead(5);
-linkedList.addToHead(6);
-linkedList.addToHead(7);
+linkedList.addToHead(1);
+linkedList.addToHead(2);
+linkedList.insert(2, 3);
+console.log(linkedList);
