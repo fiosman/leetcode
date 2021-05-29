@@ -159,7 +159,13 @@ class LinkedList {
   // TODO: Implement the remove method here
   remove(index) {
     if (index === 0) return this.removeHead();
-    // if (index === this.length - 1) return this.removeTail();
+    if (index === this.length - 1) return this.removeTail();
+
+    const nodeBeforeTarget = this.get(index - 1);
+    const target = nodeBeforeTarget.next;
+    nodeBeforeTarget.next = target.next;
+    this.length--;
+    return this;
   }
 
   // TODO: Implement the size method here
@@ -179,3 +185,7 @@ const linkedList = new LinkedList();
 linkedList.addToHead(1);
 linkedList.addToHead(2);
 linkedList.addToHead(3);
+
+console.log(linkedList);
+linkedList.remove(1);
+console.log(linkedList);
