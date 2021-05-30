@@ -25,6 +25,7 @@
 // Output: [5,-99]
 
 const deleteNode = (node) => {
+  //O(1) time and O(1) space
   node.val = node.next.val;
   node.next = node.next.next;
 };
