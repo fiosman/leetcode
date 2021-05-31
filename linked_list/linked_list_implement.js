@@ -174,18 +174,7 @@ class LinkedList {
   }
 }
 
-exports.Node = Node;
-exports.LinkedList = LinkedList;
-
-const node1 = new Node(5);
-const node2 = new Node(6);
-const node3 = new Node(7);
-
-const linkedList = new LinkedList();
-linkedList.addToHead(1);
-linkedList.addToHead(2);
-linkedList.addToHead(3);
-
-console.log(linkedList);
-linkedList.remove(1);
-console.log(linkedList);
+module.exports = {
+  Node: Node,
+  LinkedList: LinkedList,
+};
