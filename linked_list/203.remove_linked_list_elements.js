@@ -16,11 +16,27 @@
 
 const Node = require("./linked_list_implement").Node;
 
-const removeElements = (head, val) => {};
+const removeElements = (head, val) => {
+  //O(n) time and O(1) space
+  let current = head;
+
+  while (head != null && head.val === val) {
+    head = head.next;
+  }
+  while (current && current.next) {
+    if (current.next.val === val) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
+    }
+  }
+
+  return head;
+};
 
 const node1 = new Node(6);
 node1.next = new Node(2);
 node1.next.next = new Node(6);
 node1.next.next.next = new Node(4);
 
-reemoveElements(node1, 6);
+console.log(removeElements(node1, 6));
