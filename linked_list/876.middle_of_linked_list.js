@@ -17,7 +17,8 @@
 
 const Node = require("./linked_list_implement").Node;
 
-const middleNode = (head) => {};
+const middleNode = (head) => {
+};
 
 const node1 = new Node(1);
 node1.next = new Node(2);
