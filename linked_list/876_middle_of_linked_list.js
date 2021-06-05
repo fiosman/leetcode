@@ -18,6 +18,26 @@
 const Node = require("./linked_list_implement").Node;
 
 const middleNode = (head) => {
+  const midIdx = getMidIdx(head);
+  let nodePos = 0;
+
+  while (head) {
+    if (nodePos === midIdx) return head;
+    nodePos++;
+    head = head.next;
+  }
+};
+
+const getMidIdx = (head) => {
+  const hash = {};
+  let nodePos = 0;
+
+  while (head) {
+    hash[nodePos] = head.val;
+    nodePos++;
+    head = head.next;
+  }
+  return nodePos % 2 === 0 ? Math.ceil(nodePos / 2) : Math.floor(nodePos / 2);
 };
 
 const node1 = new Node(1);
@@ -25,4 +45,5 @@ node1.next = new Node(2);
 node1.next.next = new Node(3);
 node1.next.next.next = new Node(4);
 node1.next.next.next.next = new Node(5);
-console.log(node1);
+node1.next.next.next.next.next = new Node(6);
+console.log(middleNode(node1));
