@@ -1,6 +1,8 @@
 // Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect.
 // If the two linked lists have no intersection at all, return null.
 
+const { Node } = require("./linked_list_implement");
+
 // For example, the following two linked lists begin to intersect at node c1:
 
 // It is guaranteed that there are no cycles anywhere in the entire linked structure.
@@ -28,4 +30,62 @@
 // Explanation: From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.
 // Explanation: The two lists do not intersect, so return null.
 
-const getIntersectionNode = (headA, headB);
+const getIntersectionNode = (headA, headB) => {
+  const headALength = getNodeLength(headA);
+  const headBLength = getNodeLength(headB);
+  const lengthDiff =
+    headALength > headBLength
+      ? headALength - headBLength
+      : headBLength - headALength;
+
+  let firstHeadA;
+  let firstHeadB;
+
+  if (headALength < headBLength) {
+    firstHeadA = headA;
+
+    for (let i = 0; i < lengthDiff; i++) {
+      firstHeadB = headB.next;
+    }
+  } else if (headBLength < headALength) {
+    firstHeadB = headB;
+    for (let i = 0; i < lengthDiff; i++) {
+      firstHeadA = headA.next;
+    }
+  } else {
+    firstHeadA = headA;
+    firstHeadB = headB;
+  }
+
+  while (firstHeadA) {
+    if (firstHeadA === firstHeadB) return firstHeadB;
+    firstHeadA = firstHeadA.next;
+    firstHeadB = firstHeadB.next;
+  }
+  return null;
+};
+
+const getNodeLength = (head) => {
+  let nodeLength = 0;
+
+  while (head) {
+    nodeLength++;
+    head = head.next;
+  }
+
+  return nodeLength;
+};
+
+const head1 = new Node(4);
+head1.next = new Node(1);
+head1.next.next = new Node(8);
+head1.next.next.next = new Node(4);
+head1.next.next.next.next = new Node(5);
+
+const head2 = new Node(5);
+head2.next = new Node(6);
+head2.next.next = new Node(1);
+head2.next.next.next = new Node(8);
+head2.next.next.next.next = new Node(4);
+head2.next.next.next.next.next = new Node(5);
+console.log(getIntersectionNode(head1, head2));
