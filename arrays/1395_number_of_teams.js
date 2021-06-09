@@ -20,3 +20,8 @@
 
 // Input: rating = [1,2,3,4]
 // Output: 4
+
+const numTeams = (rating) => {};
+
+console.log(numTeams([2, 5, 3, 4, 1]));
+console.log(numTeams([2, 1, 3]));
