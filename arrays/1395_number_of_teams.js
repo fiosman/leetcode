@@ -23,9 +23,7 @@
 
 const numTeams = (rating) => {
   for (let i = 0; i < rating.length; i++) {
-    for (let j = 0; j < rating.length; j++) {
-      
-    }
+    for (let j = i + 1; j < rating.length; j++) {}
   }
 };
 
