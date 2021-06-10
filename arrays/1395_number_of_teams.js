@@ -21,7 +21,13 @@
 // Input: rating = [1,2,3,4]
 // Output: 4
 
-const numTeams = (rating) => {};
+const numTeams = (rating) => {
+  for (let i = 0; i < rating.length; i++) {
+    for (let j = 0; j < rating.length; j++) {
+      
+    }
+  }
+};
 
 console.log(numTeams([2, 5, 3, 4, 1]));
 console.log(numTeams([2, 1, 3]));
