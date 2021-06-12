@@ -14,7 +14,23 @@
 // Input: n = 1
 // Output: [0]
 
-const sumZero = (n) => { 
+const sumZero = (n) => {
+  let nums;
 
-}
+  if (n % 2 === 0) {
+    nums = [];
+  } else {
+    nums = [0];
+  }
 
+  let i = 1;
+
+  while (nums.length < n) {
+    nums.push(i, -i);
+    i++;
+  }
+
+  return nums;
+};
+
+console.log(sumZero(1));
