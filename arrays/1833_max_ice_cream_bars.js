@@ -6,7 +6,7 @@ const maxIceCream = (costs, coins) => {
 
   const sorted = costs.sort((a, b) => a - b);
   for (let i = 0; i < sorted.length; i++) {
-    if (sorted[i] > remainingCoins) continue;
+    if (sorted[i] > remainingCoins) break;
 
     remainingCoins -= sorted[i];
     maxBars += 1;
