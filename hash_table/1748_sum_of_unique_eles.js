@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/sum-of-unique-elements/
 
 const sumOfUnique = (nums) => {
+  //O(n) time and O(n) space
   let numsFreq = {};
 
   for (let i = 0; i < nums.length; i++) {
