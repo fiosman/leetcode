@@ -8,14 +8,16 @@ const dailyTemperatures = (temperatures) => {
       outputArr.push(0);
     }
     for (let j = i + 1; j < temperatures.length; j++) {
-      console.log(i, j);
       if (temperatures[j] > temperatures[i]) {
         outputArr.push(j - i);
         break;
+      }
+      if (j === temperatures.length - 1) {
+        outputArr.push(0);
       }
     }
   }
   return outputArr;
 };
 
-console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]));
+console.log(dailyTemperatures([30, 60, 90]));
