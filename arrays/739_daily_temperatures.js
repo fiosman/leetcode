@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/daily-temperatures/
 
 const dailyTemperatures = (temperatures) => {
+  // O(n^2) time and O(n) space
   let outputArr = [];
   for (let i = 0; i < temperatures.length; i++) {
     if (i === temperatures.length - 1) {
