@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/first-unique-character-in-a-string/
 
 const firstUniqChar = (s) => {
+  //O(n) time and O(1) space => only 26 letters
   let charFreqs = {};
 
   for (let i = 0; i < s.length; i++) {
