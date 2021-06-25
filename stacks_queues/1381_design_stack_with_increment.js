@@ -1,11 +1,14 @@
 // https://leetcode.com/problems/design-a-stack-with-increment-operation/
 
 class CustomStack {
-  constructor(size) {
-    this.size = size;
+  constructor(maxSize) {
+    this.maxSize = maxSize;
+    this.stack = [];
   }
 
-  push() {}
+  push(x) {
+    this.stack.length === this.maxSize ? null : this.stack.push(x);
+  }
 
   pop() {}
 
