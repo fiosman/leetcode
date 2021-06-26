@@ -12,7 +12,14 @@ class CustomStack {
     }
   }
 
-  pop() {}
+  pop() {
+    if (this.stack.length > 0) {
+      this.stack.pop();
+      return this.stack[this.stack.length - 1];
+    } else {
+      return -1;
+    }
+  }
 
   increment() {}
 }
