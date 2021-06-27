@@ -5,7 +5,6 @@
 // Output: [4,7,2,9,6,3,1]
 // Example 2:
 
-
 // Input: root = [2,1,3]
 // Output: [2,3,1]
 // Example 3:
@@ -13,3 +12,13 @@
 // Input: root = []
 // Output: []
 
+const inverTree = (root) => {
+  if (!root) return null;
+
+  let temp = root.left;
+  root.left = right.right;
+  root.right = temp;
+
+  invertTree(root.left);
+  invertTree(root.right);
+};
