@@ -24,5 +24,10 @@ class CustomStack {
     }
   }
 
-  increment() {}
+  increment(k, val) {
+    for (let i = 0; i <= k; i++) {
+      if (this.stack[i] === undefined) break;
+      this.stack[i] += val;
+    }
+  }
 }
