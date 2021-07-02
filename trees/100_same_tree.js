@@ -15,4 +15,16 @@
 // Input: (p = [1, 2, 1]), (q = [1, 1, 2]);
 // Output: false;
 
-const isSameTree = (root1, root2) => {};
+const Node = require("./node_class").TreeNode;
+
+const isSameTree = (root1, root2) => {
+  
+};
+
+const root1 = new Node(1);
+root1.left = new Node(2);
+root1.right = new Node(3);
+
+const root2 = new Node(1);
+root2.left = new Node(2);
+root2.right = new Node(3);
