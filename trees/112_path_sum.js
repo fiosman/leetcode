@@ -2,9 +2,7 @@
 
 const Node = require("./node_class").TreeNode;
 
-const hasPathSum = (root, targetSum) => {
-  
-};
+const hasPathSum = (root, targetSum) => {};
 
 const root1 = new Node(5);
 root1.left = new Node(4);
