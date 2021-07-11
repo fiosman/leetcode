@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
 
 const findNumbers = (nums) => {
+  //O(n) time and O(1) space
   let count = 0;
 
   for (let i = 0; i < nums.length; i++) {
