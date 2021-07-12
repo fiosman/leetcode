@@ -14,4 +14,18 @@
 // Output: true
 // Explanation: [5,7,23] are three consecutive odds.
 
-const threeConsecutiveOdds = () => {};
+const threeConsecutiveOdds = (arr) => {
+  //O(n) time and O(1) space
+  let countOfOdds = 0;
+  for (let i = 0; i <= arr.length; i++) {
+    if (countOfOdds === 3) return true;
+    if (arr[i] % 2 != 0) {
+      countOfOdds++;
+    } else {
+      countOfOdds = 0;
+    }
+  }
+  return false;
+};
+
+console.log(threeConsecutiveOdds([1, 2, 34, 3, 4, 5, 7, 23, 12]));
