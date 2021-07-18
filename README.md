@@ -4,4 +4,4 @@ This repo contains my solutions to leetcode problems tackling various data struc
 
 Note that the solutions will be written using JavaScript. I may fiddle with Typescript/Python here and there.
 
-The aim of this exercise is to better familiarize myself with common data structures and algorithms and how they may be applied in day-to-day tasks. 
+The aim of this exercise is to better familiarize myself with common data structures and algorithms and how they may be applied in day-to-day tasks.
