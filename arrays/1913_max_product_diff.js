@@ -8,4 +8,13 @@
 
 // Return the maximum such product difference.
 
-const maxProductDifference = (nums) => {};
+const maxProductDifference = (nums) => {
+  const sortedNums = nums.sort((a, b) => a - b);
+
+  const maxPairProduct = sortedNums[sortedNums.length - 1] * sortedNums[sortedNums.length - 2];
+  const minPairProduct = sortedNums[0] * sortedNums[1];
+
+  return maxPairProduct - minPairProduct;
+};
+
+console.log(maxProductDifference([1, 6, 7, 5, 2, 4, 10, 6, 4]));
