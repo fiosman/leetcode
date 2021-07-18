@@ -6,4 +6,13 @@
 
 //https://leetcode.com/problems/shuffle-string/
 
-const restoreString = (s, indices) => {};
+const restoreString = (s, indices) => {
+  //O(n) time and O(n) space
+  let shuffledString = new Array(s.length).fill("");
+  for (let i = 0; i < indices.length; i++) {
+    shuffledString[indices[i]] = s[i];
+  }
+  return shuffledString.join("");
+};
+
+console.log(restoreString("aiohn", [3, 1, 4, 2, 0]));
