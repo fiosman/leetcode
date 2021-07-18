@@ -9,6 +9,7 @@
 // Return the maximum such product difference.
 
 const maxProductDifference = (nums) => {
+  //O(n) time and O(n) space
   const sortedNums = nums.sort((a, b) => a - b);
 
   const maxPairProduct = sortedNums[sortedNums.length - 1] * sortedNums[sortedNums.length - 2];
