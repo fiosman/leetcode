@@ -16,4 +16,15 @@
 // Input: command = "(al)G(al)()()G"
 // Output: "alGalooG"
 
-const interpret = (command) => {};
+const interpret = (command) => {
+  const mapObj = {
+    G: "G",
+    "()": "o",
+    "(al)": "al",
+  };
+  command.replace(/\G|\()|\(al)/, (matched) => {
+    return mapObj[matched];
+  });
+};
+
+console.log(interpret("G()(al)"));
