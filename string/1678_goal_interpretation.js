@@ -18,13 +18,10 @@
 
 const interpret = (command) => {
   const mapObj = {
-    G: "G",
     "()": "o",
     "(al)": "al",
   };
-  command.replace(/\G|\()|\(al)/, (matched) => {
-    return mapObj[matched];
-  });
+  return command.replace(/\(al\)|\(\)/g, (matched) => mapObj[matched]);
 };
 
 console.log(interpret("G()(al)"));
