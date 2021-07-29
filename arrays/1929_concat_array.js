@@ -24,5 +24,6 @@
 // - ans = [1,3,2,1,1,3,2,1]
 
 const getConcatenation = (nums) => {
+  // O(n) time and O(n) space
   return nums.concat(...nums);
 };
