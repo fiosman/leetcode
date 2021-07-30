@@ -8,4 +8,33 @@
 
 // Return true if a and b are alike. Otherwise, return false.
 
-const halvesAreAlike = (string) => {};
+const halvesAreAlike = (string) => {
+  const midIdx = string.length / 2;
+  const firstHalf = string.slice(0, midIdx);
+  const secondHalf = string.slice(midIdx, string.length);
+  const vowels = {
+    a: true,
+    e: true,
+    i: true,
+    o: true,
+    u: true,
+  };
+  let firstHalfVowelCount = 0;
+  let secondHalfVowelCount = 0;
+
+  for (let i = 0; i < firstHalf.length; i++) {
+    if (vowels[firstHalf[i].toLowerCase()]) {
+      firstHalfVowelCount++;
+    }
+  }
+
+  for (let i = 0; i < secondHalf.length; i++) {
+    if (vowels[secondHalf[i].toLowerCase()]) {
+      secondHalfVowelCount++;
+    }
+  }
+
+  return firstHalfVowelCount === secondHalfVowelCount;
+};
+
+console.log(halvesAreAlike("AbCdEfGh"));
