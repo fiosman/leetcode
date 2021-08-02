@@ -21,6 +21,7 @@
 // Explanation: Sort the words in s to their original positions "Me1 Myself2 and3 I4", then remove the numbers.
 
 const sortSentence = (s) => {
+  //O(n) time and O(n) space
   let arr = s.split(" ");
   let newArr = [];
 
