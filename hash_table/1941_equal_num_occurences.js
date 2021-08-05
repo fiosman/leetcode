@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/submissions/
+
 const areOccurencesEqual = (s) => {
   //O(n) time and O(n) space
   let freq = {};
