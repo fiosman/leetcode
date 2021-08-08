@@ -6,4 +6,33 @@
 
 // Return the letter that was added to t.
 
-const findTheDifference = (s, t) => {};
+// Example 1:
+
+// Input: s = "abcd", t = "abcde"
+// Output: "e"
+// Explanation: 'e' is the letter that was added.
+
+// Example 2:
+// Input: s = "", t = "y"
+// Output: "y"
+
+// Example 3:
+// Input: s = "a", t = "aa"
+// Output: "a"
+
+// Example 4:
+// Input: s = "ae", t = "aea"
+// Output: "a"
+
+const findTheDifference = (s, t) => {
+  const sString = s.split("").sort();
+  const tString = t.split("").sort();
+
+  for (let i = 0; i < tString.length; i++) {
+    if (tString[i] != sString[i]) {
+      return tString[i];
+    }
+  }
+};
+
+console.log(findTheDifference("a", "aa"));
