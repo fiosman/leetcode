@@ -18,4 +18,14 @@
 // Input: boxes = "001011"
 // Output: [11,8,5,4,3,4]
 
-const minOperations = (boxes) => {};
+const minOperations = (boxes) => {
+  let answer = [];
+  for (let i = 0; i < boxes.length; i++) {
+    for (let j = i + 1; j < boxes.length; j++) {
+      let temp = 0;
+      if (boxes[j] === "1") {
+        temp = temp + (j - i);
+      }
+    }
+  }
+};
