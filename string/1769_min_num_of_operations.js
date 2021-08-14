@@ -21,11 +21,16 @@
 const minOperations = (boxes) => {
   let answer = [];
   for (let i = 0; i < boxes.length; i++) {
-    for (let j = i + 1; j < boxes.length; j++) {
-      let temp = 0;
+    let temp = 0;
+    for (let j = 0; j < boxes.length; j++) {
+      if (j === i) continue;
       if (boxes[j] === "1") {
-        temp = temp + (j - i);
+        temp = temp + Math.abs(i - j);
       }
     }
+    answer.push(temp);
+    temp = 0;
   }
+
+  return answer;
 };
