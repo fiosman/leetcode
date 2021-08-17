@@ -16,3 +16,10 @@
 const Node = require("./linked_list_implement").Node;
 
 const addTwoNumbers = (l1, l2) => {};
+
+const node1 = new Node(2);
+node1.next = new Node(4);
+node1.next.next = new Node(3);
+const node2 = new Node(5);
+node2.next = new Node(6);
+node2.next = new Node(4);
