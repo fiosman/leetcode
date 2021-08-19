@@ -15,7 +15,20 @@
 
 const Node = require("./linked_list_implement").Node;
 
-const addTwoNumbers = (l1, l2) => {};
+const addTwoNumbers = (l1, l2) => {
+  let l3 = new Node(null);
+  let sum = 0;
+  let carry = 0;
+
+  while (l1 && l2) {
+    let sum = l1.val + l2.val;
+    if (sum / 10 >= 1) {
+    } else {
+      l3.val = sum;
+    }
+  }
+  return l3;
+};
 
 const node1 = new Node(2);
 node1.next = new Node(4);
