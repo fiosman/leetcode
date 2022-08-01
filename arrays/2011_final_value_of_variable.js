@@ -52,6 +52,3 @@ const finalValueAfterOperations = (opArr) => {
 
   return finalValue;
 };
-
-const operations = ["++X", "++X", "X++"];
-console.log(finalValueAfterOperations(operations));
