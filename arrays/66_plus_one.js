@@ -7,7 +7,17 @@
 // Increment the large integer by one and return the resulting array of digits.
 
 const plusOne = (digits) => {
-  digits[digits.length - 1] = digits[digits.length - 1] + 1;
+  let carry = 1;
+  for (let i = digits.length - 1; i >= 0; i--) {
+    digits[i] += carry;
+    if (digits[i] <= 9) {
+      return digits;
+    } else {
+      digits[i] = 0;
+      carry = 1;
+    }
+  }
 
+  digits.unshift(carry);
   return digits;
 };
