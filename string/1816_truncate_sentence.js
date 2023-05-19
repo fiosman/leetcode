@@ -16,3 +16,14 @@
 
 // Input: s = "chopper is not a tanuki", k = 5
 // Output: "chopper is not a tanuki"
+
+const truncateSentence = (s, k) => {
+  const formattedSentence = s.split(" ");
+  let finalString = "";
+
+  for (let i = 0; i < k; i++) {
+    finalString += formattedSentence[i] + (k - i === 1 ? "" : " ");
+  }
+
+  return finalString;
+};
