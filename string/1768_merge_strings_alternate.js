@@ -24,3 +24,14 @@
 // word1:  a   b   c   d
 // word2:    p   q
 // merged: a p b q c   d
+
+const mergeAlternately = (word1, word2) => {
+  let finalWord = "";
+  for (let i = 0; i < word1.length; i++) {
+    finalWord += word1[i] + word2[i];
+  }
+
+  console.log(finalWord);
+};
+
+return mergeAlternately("ab", "pqrs");
