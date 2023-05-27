@@ -30,8 +30,6 @@ const mergeAlternately = (word1, word2) => {
   for (let i = 0; i < word1.length; i++) {
     finalWord += word1[i] + word2[i];
   }
-
-  console.log(finalWord);
 };
 
 return mergeAlternately("ab", "pqrs");
