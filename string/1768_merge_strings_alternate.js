@@ -33,7 +33,6 @@ const mergeAlternately = (word1, word2) => {
       finalWord += word2.slice(0, i);
     }
   }
-  console.log(finalWord);
 };
 
 return mergeAlternately("ab", "pqrs");
