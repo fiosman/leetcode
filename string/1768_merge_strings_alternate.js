@@ -27,12 +27,12 @@
 
 const mergeAlternately = (word1, word2) => {
   let finalWord = "";
-  for (let i = 0; i < word1.length; i++) {
+  let minLength = Math.min(word1.length, word2.length);
+  for (let i = 0; i < minLength; i++) {
     finalWord += word1[i] + word2[i];
-    if (i + 1 < word1.length) {
-      finalWord += word2.slice(0, i);
-    }
   }
-};
 
-return mergeAlternately("ab", "pqrs");
+  finalWord += word1.slice(minLength) + word2.slice(minLength);
+
+  return finalWord;
+};
