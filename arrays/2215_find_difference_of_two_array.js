@@ -24,5 +24,3 @@ const findDifference = (nums1, nums2) => {
 
   return [nums1IntegersNotPresentInNums2, nums2IntegersNotPresentInNums1];
 };
-
-console.log(findDifference([1, 2, 3], [4, 5, 6]));
