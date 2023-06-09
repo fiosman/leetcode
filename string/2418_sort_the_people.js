@@ -8,4 +8,14 @@
 // Output: ["Bob","Alice","Bob"]
 // Explanation: The first Bob is the tallest, followed by Alice and the second Bob.
 
-const sortPeople = (names, heights) => {};
+const sortPeople = (names, heights) => {
+  for (let i = 0; i < names.length; i++) {
+    if (!heights[i + 1]) {
+      break;
+    }
+    if (heights[i + 1] > heights[i]) {
+      [names[i], names[i + 1]] = [names[i + 1], names[i]];
+    }
+  }
+  return names;
+};
