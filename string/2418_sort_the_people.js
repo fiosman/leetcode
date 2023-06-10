@@ -10,12 +10,8 @@
 
 const sortPeople = (names, heights) => {
   for (let i = 0; i < names.length; i++) {
-    if (!heights[i + 1]) {
-      break;
-    }
-    if (heights[i + 1] > heights[i]) {
-      [names[i], names[i + 1]] = [names[i + 1], names[i]];
-    }
+    if (!heights[i + 1]) break;
+    if (heights[i + 1] > heights[i]) [names[i], names[i + 1]] = [names[i + 1], names[i]];
   }
   return names;
 };
