@@ -10,4 +10,6 @@
 // Output: "123"
 // Explanation: Integer "123" has no trailing zeros, we return integer "123".
 
-const removeTrailingZeros = (num) => {};
+const removeTrailingZeros = (num) => {
+  if (num[num.length - 1] !== 0) return num;
+};
