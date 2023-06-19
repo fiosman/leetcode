@@ -15,12 +15,9 @@ const removeTrailingZeros = (num) => {
 
   let noTrailingZeroes = "";
 
-  for (let i = 0; i < num.length; i++) {
-    if (
-      num[i] !== "0" ||
-      (num[i] === "0" && num[i + 1] !== "0" && num[i + 1] && i === num.length - 1)
-    ) {
-      noTrailingZeroes += num[i];
+  for (let i = num.length - 1; i >= 0; i--) {
+    if (num[i] === "0") {
+      num = num.slice(0, num.length - 1);
     }
   }
 
