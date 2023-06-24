@@ -1,11 +1,15 @@
 // https://leetcode.com/problems/third-maximum-number/
 
 var thirdMax = function (nums) {
-  const sortedUniqueNumsArray = Array.from(new Set(nums)).sort((a, b) =>
-    nums.length >= 3 ? b - a : a - b
-  );
+  let uniqueNumsArray = Array.from(new Set(nums));
 
-  return sortedUniqueNumsArray.length >= 3
-    ? sortedUniqueNumsArray[2]
-    : sortedUniqueNumsArray[sortedUniqueNumsArray.length - 1];
+  if (uniqueNumsArray.length >= 3) {
+    uniqueNumsArray = uniqueNumsArray.sort((a, b) => b - a);
+  } else {
+    uniqueNumsArray = uniqueNumsArray.sort((a, b) => a - b);
+  }
+
+  return uniqueNumsArray.length >= 3
+    ? uniqueNumsArray[2]
+    : uniqueNumsArray[uniqueNumsArray.length - 1];
 };
