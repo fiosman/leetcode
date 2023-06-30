@@ -15,8 +15,6 @@ var leftRightDifference = function (nums) {
     rightSum.push(nums.slice(i, nums.length).reduce((s, t) => s + t));
   }
   rightSum.push(0);
-
-  return rightSum;
 };
 
 leftRightDifference([10, 4, 8, 3]);
