@@ -5,8 +5,7 @@ const rowAndMaximumOnes = (mat) => {
   const finalRowCounts = [];
 
   for (let i = 0; i < mat.length; i++) {
-    for (let j = 0; j < i.length; j++) {
-      console.log(mat[i][j]);
+    for (let j = 0; j < mat[i].length; j++) {
       if (mat[i][j] === 1) {
         currentRowOneCount++;
       }
@@ -19,9 +18,7 @@ const rowAndMaximumOnes = (mat) => {
   return finalRowCounts;
 };
 
-console.log(
-  rowAndMaximumOnes([
-    [0, 1],
-    [1, 0],
-  ])
-);
+rowAndMaximumOnes([
+  [0, 1],
+  [1, 0],
+]);
