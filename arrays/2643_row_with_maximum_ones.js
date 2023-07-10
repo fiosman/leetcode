@@ -15,10 +15,18 @@ const rowAndMaximumOnes = (mat) => {
     currentRowOneCount = 0;
   }
 
-  return finalRowCounts;
+  let mostCounts = [0, finalRowCounts[0]];
+  for (let i = 0; i < finalRowCounts.length; i++) {
+    if (finalRowCounts[i] > mostCounts[1]) {
+      mostCounts[0] = i;
+      mostCounts[1] = finalRowCounts[i];
+    }
+  }
+
+  return mostCounts;
 };
 
 rowAndMaximumOnes([
-  [0, 1],
-  [1, 0],
+  [0, 0, 0],
+  [0, 1, 1],
 ]);
