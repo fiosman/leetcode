@@ -21,4 +21,15 @@
 // Explanation: After sorting, nums is [1,2,2,3,5].
 // The index where nums[i] == 5 is 4.
 
-const targetIndices = (nums, target) => {};
+const targetIndices = (nums, target) => {
+  const sortedArray = nums.sort((a, b) => a - b);
+  const indices = [];
+
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (sortedArray[i] === target) {
+      indices.push(i);
+    }
+  }
+
+  return indices;
+};
