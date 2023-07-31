@@ -17,4 +17,17 @@
 // Input: arr = [37,12,28,9,100,56,80,5,12]
 // Output: [5,3,4,2,8,6,7,1,3]
 
-const arrayRankTransform = (arr) => {};
+const arrayRankTransform = (arr) => {
+  const sortedArr = arr.sort((a, b) => a - b);
+  const ranks = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const indexWithinSortedArr = sortedArr.findIndex((ele) => ele === arr[i]);
+
+    ranks.push(indexWithinSortedArr);
+  }
+
+  return ranks;
+};
+
+console.log(arrayRankTransform([40, 10, 20, 30]));
