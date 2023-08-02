@@ -22,7 +22,8 @@ const arrayRankTransform = (arr) => {
   const ranks = [];
 
   for (let i = 0; i < arr.length; i++) {
-    const indexWithinSortedArr = sortedArr.findIndex((ele) => ele === arr[i]);
+    const indexWithinSortedArr = arr.findIndex((ele) => ele === sortedArr[i]);
+    console.log(indexWithinSortedArr);
 
     ranks.push(indexWithinSortedArr);
   }
