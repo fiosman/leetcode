@@ -23,12 +23,9 @@ const arrayRankTransform = (arr) => {
 
   for (let i = 0; i < arr.length; i++) {
     const indexWithinSortedArr = arr.findIndex((ele) => ele === sortedArr[i]);
-    console.log(indexWithinSortedArr);
 
     ranks.push(indexWithinSortedArr);
   }
 
   return ranks;
 };
-
-console.log(arrayRankTransform([40, 10, 20, 30]));
