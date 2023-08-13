@@ -22,10 +22,12 @@ const arrayRankTransform = (arr) => {
   const ranks = [];
 
   for (let i = 0; i < arr.length; i++) {
-    const indexWithinSortedArr = arr.findIndex((ele) => ele === sortedArr[i]);
+    const indexWithinSortedArr = sortedArr.findIndex((ele) => ele === arr[i]);
 
     ranks.push(indexWithinSortedArr);
   }
 
   return ranks;
 };
+
+arrayRankTransform([37, 12, 28, 9, 100, 56, 80, 5, 12]);
