@@ -18,16 +18,16 @@
 // Output: [5,3,4,2,8,6,7,1,3]
 
 const arrayRankTransform = (arr) => {
-  const sortedArr = arr.sort((a, b) => a - b);
-  const ranks = [];
+  const sortedArr = [...arr].sort((a, b) => a - b);
+  const ranks = new Map();
 
-  for (let i = 0; i < arr.length; i++) {
-    const indexWithinSortedArr = sortedArr.findIndex((ele) => ele === arr[i]);
-
-    ranks.push(indexWithinSortedArr);
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (!ranks.has(sortedArr[i])) {
+      ranks.set(sortedArr[i], ranks.size + 1);
+    }
   }
 
-  return ranks;
+  return arr.map((num) => ranks.get(num));
 };
 
 arrayRankTransform([37, 12, 28, 9, 100, 56, 80, 5, 12]);
