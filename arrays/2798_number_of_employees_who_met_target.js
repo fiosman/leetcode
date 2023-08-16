@@ -19,4 +19,14 @@
 // Explanation: The company wants each employee to work for at least 6 hours.
 // There are 0 employees who met the target.
 
-const numberOfEmployeesWhoMetTarget = (hours, target) => {};
+const numberOfEmployeesWhoMetTarget = (hours, target) => {
+  let metTarget = 0;
+
+  for (let i = 0; i < hours.length; i++) {
+    if (hours[i] >= target) {
+      metTarget++;
+    }
+  }
+
+  return metTarget;
+};
