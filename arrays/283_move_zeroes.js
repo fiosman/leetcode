@@ -9,4 +9,16 @@
 // Input: nums = [0]
 // Output: [0]
 
-const moveZeroes = (nums) => {};
+const moveZeroes = (nums) => {
+  for (let i = 0; i < nums.length; i++) {}
+
+  return nums;
+};
+
+const swapEles = (eles) => {
+  const temp = eles[0];
+  eles[0] = eles[1];
+  eles[1] = temp;
+
+  return eles;
+};
