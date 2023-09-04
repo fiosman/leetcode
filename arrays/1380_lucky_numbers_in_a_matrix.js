@@ -26,7 +26,6 @@ const luckyNumbers = (matrix) => {
     let currentMinRow = matrix[i][0];
     minValPosRow[currentMinRow] = i;
     for (let j = 1; j < matrix[i].length; j++) {
-      console.log(`oh yes`, matrix[i][j]);
       if (matrix[i][j] < currentMinRow) {
         currentMinRow = matrix[i][j];
         minValPosRow[currentMinRow] = i;
