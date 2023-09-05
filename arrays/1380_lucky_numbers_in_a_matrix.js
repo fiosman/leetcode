@@ -19,26 +19,26 @@
 // Explanation: 7 is the only lucky number since it is the minimum in its row and the maximum in its column.
 
 const luckyNumbers = (matrix) => {
-  let maxValPosCol = {};
-  let minValPosRow = {};
+  let minInEachRow = {};
 
   for (let i = 0; i < matrix.length; i++) {
-    let currentMinRow = matrix[i][0];
-    minValPosRow[currentMinRow] = i;
-    for (let j = 1; j < matrix[i].length; j++) {
-      if (matrix[i][j] < currentMinRow) {
-        currentMinRow = matrix[i][j];
-        minValPosRow[currentMinRow] = i;
+    let currentMinValInRow = matrix[i][0];
+    minInEachRow[i] = minInEachRow[matrix[i][0]];
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] < currentMinValInRow) {
+        minInEachRow[i] = matrix[i][j];
+        currentMinValInRow = matrix[i][j];
       }
     }
   }
-  return minValPosRow;
+
+  return minInEachRow;
 };
 
 console.log(
   luckyNumbers([
     [3, 7, 8],
-    [9, 11, 13],
+    [11, 9, 13],
     [15, 16, 17],
   ])
 );
