@@ -20,10 +20,15 @@
 
 const luckyNumbers = (matrix) => {
   let minInEachRow = {};
+  let maxInEachColumn = {};
 
   for (let i = 0; i < matrix.length; i++) {
     let currentMinValInRow = matrix[i][0];
+    let currentMaxValInColumn = matrix[i][0];
+
     minInEachRow[i] = currentMinValInRow;
+    maxInEachColumn[i] = currentMaxValInColumn;
+
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] < currentMinValInRow) {
         minInEachRow[i] = matrix[i][j];
