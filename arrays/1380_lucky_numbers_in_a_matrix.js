@@ -23,7 +23,7 @@ const luckyNumbers = (matrix) => {
 
   for (let i = 0; i < matrix.length; i++) {
     let currentMinValInRow = matrix[i][0];
-    minInEachRow[i] = minInEachRow[matrix[i][0]];
+    minInEachRow[i] = currentMinValInRow;
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] < currentMinValInRow) {
         minInEachRow[i] = matrix[i][j];
@@ -37,8 +37,8 @@ const luckyNumbers = (matrix) => {
 
 console.log(
   luckyNumbers([
-    [3, 7, 8],
-    [11, 9, 13],
-    [15, 16, 17],
+    [3, 7, 1],
+    [0, 9, 8],
+    [15, 11, 10],
   ])
 );
