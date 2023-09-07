@@ -24,26 +24,39 @@ const luckyNumbers = (matrix) => {
 
   for (let i = 0; i < matrix.length; i++) {
     let currentMinValInRow = matrix[i][0];
-    let currentMaxValInColumn = matrix[i][0];
-
     minInEachRow[i] = currentMinValInRow;
-    maxInEachColumn[i] = currentMaxValInColumn;
 
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] < currentMinValInRow) {
         minInEachRow[i] = matrix[i][j];
         currentMinValInRow = matrix[i][j];
       }
+
+      if (!maxInEachColumn[j] || matrix[i][j] > maxInEachColumn[j]) {
+        maxInEachColumn[j] = matrix[i][j];
+      }
     }
   }
 
-  return minInEachRow;
+  const rowMinVals = Object.values(minInEachRow);
+  const colMaxVals = Object.values(maxInEachColumn);
+  const finalArr = [...rowMinVals, ...colMaxVals];
+
+  console.log(finalArr);
+  let res = finalArr[0];
+  for (let i = 0; i < finalArr.length; i++) {
+    if (finalArr[i + 1] === res) {
+      res = finalArr[i + 1];
+    }
+  }
+
+  console.log(res);
 };
 
 console.log(
   luckyNumbers([
-    [3, 7, 1],
-    [0, 9, 8],
-    [15, 11, 10],
+    [3, 7, 8],
+    [9, 11, 13],
+    [15, 16, 17],
   ])
 );
