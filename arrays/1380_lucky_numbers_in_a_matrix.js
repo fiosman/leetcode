@@ -42,7 +42,6 @@ const luckyNumbers = (matrix) => {
   const colMaxVals = Object.values(maxInEachColumn);
   const finalArr = [...rowMinVals, ...colMaxVals];
 
-  console.log(finalArr);
   let res = finalArr[0];
   for (let i = 0; i < finalArr.length; i++) {
     if (finalArr[i + 1] === res) {
