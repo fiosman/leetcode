@@ -40,16 +40,21 @@ const luckyNumbers = (matrix) => {
 
   const rowMinVals = Object.values(minInEachRow);
   const colMaxVals = Object.values(maxInEachColumn);
-  const finalArr = [...rowMinVals, ...colMaxVals];
+  const luckyNumbersArr = [];
 
-  let res = finalArr[0];
-  for (let i = 0; i < finalArr.length; i++) {
-    if (finalArr[i + 1] === res) {
-      res = finalArr[i + 1];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === rowMinVals[i] && matrix[i][j] === colMaxVals[j]) {
+        luckyNumbersArr.push(matrix[i][j]);
+      }
     }
   }
 
-  console.log(res);
+  if (luckyNumbersArr.length > 0) {
+    return luckyNumbersArr;
+  } else {
+    return [];
+  }
 };
 
 console.log(
