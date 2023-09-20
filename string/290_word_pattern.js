@@ -18,8 +18,9 @@
 const wordPattern = (pattern, s) => {
   let stringPattern = "";
   const modifiedString = s.split(" ");
-  for (let i = 0; i < s.length; i++) {
-    stringPattern += s[i][0];
+  for (let i = 0; i < modifiedString.length; i++) {
+    stringPattern += modifiedString[i][0];
+    continue;
   }
 
   return stringPattern;
