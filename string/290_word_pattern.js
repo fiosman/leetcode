@@ -26,4 +26,17 @@ const wordPattern = (pattern, s) => {
   return stringPattern;
 };
 
-console.log(wordPattern("abba", "dog cat cat dog"));
+const generatePattern = (string) => {
+  let resPattern = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string.substring(i + 1, string.length).indexOf(string[i]) > -1) {
+      resPattern += "1";
+    } else {
+      resPattern += "0";
+    }
+  }
+
+  console.log(resPattern);
+};
+
+return generatePattern("abba");
