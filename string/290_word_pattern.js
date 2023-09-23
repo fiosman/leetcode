@@ -36,7 +36,7 @@ const generatePattern = (string) => {
     }
   }
 
-  console.log(resPattern);
+  return resPattern;
 };
 
 return generatePattern("abba");
