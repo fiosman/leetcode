@@ -16,27 +16,25 @@
 // Output: false
 
 const wordPattern = (pattern, s) => {
-  let stringPattern = "";
-  const modifiedString = s.split(" ");
-  for (let i = 0; i < modifiedString.length; i++) {
-    stringPattern += modifiedString[i][0];
-    continue;
+  const patternMap = new Map();
+  const wordMap = new Map();
+  const words = s.split(" ");
+
+  if (pattern.length !== words.length) {
+    return false; // Patterns of different lengths cannot match
   }
 
-  return stringPattern;
-};
+  for (let i = 0; i < pattern.length; i++) {
+    const char = pattern[i];
+    const word = words[i];
 
-const generatePattern = (string) => {
-  let resPattern = "";
-  for (let i = 0; i < string.length; i++) {
-    if (string.substring(i + 1, string.length).indexOf(string[i]) > -1) {
-      resPattern += "1";
-    } else {
-      resPattern += "0";
+    if (!patternMap.has(char) && !wordMap.has(word)) {
+      patternMap.set(char, word);
+      wordMap.set(word, char);
+    } else if (patternMap.get(char) !== word || wordMap.get(word) !== char) {
+      return false;
     }
   }
 
-  return resPattern;
+  return true;
 };
-
-return generatePattern("abba");
