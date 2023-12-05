@@ -29,3 +29,13 @@
 // Therefore, we return "ponter".
 
 const finalString = (s) => {};
+
+const reverseWord = (s) => {
+  let reversed = "";
+
+  for (let i = s.length - 1; i >= 0; i--) {
+    reversed += s[i];
+  }
+
+  return reversed;
+};
