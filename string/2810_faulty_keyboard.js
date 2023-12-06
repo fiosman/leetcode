@@ -28,14 +28,27 @@
 // After the eighth character, the text is "ponter".
 // Therefore, we return "ponter".
 
-const finalString = (s) => {};
+const finalString = (s) => {
+  let finalWord = "";
+  let remainingWord = s;
+  for (let i = 0; i < remainingWord.length; i++) {
+    if (remainingWord[i] === "i") {
+      finalWord += reverseWord(remainingWord.slice(0, i));
+      remainingWord = remainingWord.slice(i + 1);
+    }
+  }
+
+  finalWord += remainingWord;
+
+  return finalWord;
+};
 
 const reverseWord = (s) => {
   let reversed = "";
-
   for (let i = s.length - 1; i >= 0; i--) {
     reversed += s[i];
   }
-
   return reversed;
 };
+
+console.log(finalString("poiinter"));
