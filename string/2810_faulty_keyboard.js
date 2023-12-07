@@ -34,7 +34,10 @@ const finalString = (s) => {
   for (let i = 0; i < remainingWord.length; i++) {
     if (remainingWord[i] === "i") {
       finalWord += reverseWord(remainingWord.slice(0, i));
+      console.log(i, finalWord);
       remainingWord = remainingWord.slice(i + 1);
+      console.log(i, remainingWord);
+      i = 0;
     }
   }
 
