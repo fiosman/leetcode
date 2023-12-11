@@ -23,4 +23,15 @@
 // expected: [1,2,3,4,5]
 // All indices match.
 
-const heightChecker = () => {};
+const heightChecker = (heights) => {
+  const sorted = [...heights].sort((a, b) => a - b);
+  let nonMatching = 0;
+  for (let i = 0; i < heights.length; i++) {
+    if (heights[i] !== sorted[i]) {
+      nonMatching += 1;
+    }
+  }
+  return nonMatching;
+};
+
+heightChecker([5, 1, 2, 3, 4]);
