@@ -33,5 +33,3 @@ const heightChecker = (heights) => {
   }
   return nonMatching;
 };
-
-heightChecker([5, 1, 2, 3, 4]);
