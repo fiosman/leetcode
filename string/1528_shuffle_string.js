@@ -14,5 +14,3 @@ const restoreString = (s, indices) => {
   }
   return shuffledString.join("");
 };
-
-console.log(restoreString("aiohn", [3, 1, 4, 2, 0]));
