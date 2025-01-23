@@ -10,7 +10,3 @@ class Solution:
         for _ in range(k):
             min = heapq.heappop(flattened)
         return min
-
-
-soln = Solution()
-print(soln.kthSmallest([[-5]], 1))
