@@ -11,6 +11,5 @@ class Solution:
         sorted_str = ""
         while negated_frequencies:
             popped = heapq.heappop(negated_frequencies)
-            print(popped[1])
             sorted_str += popped[1] * -popped[0]
         return sorted_str
