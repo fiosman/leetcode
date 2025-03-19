@@ -6,9 +6,3 @@ class Solution:
         total_seconds += moves + 1
       
       return total_seconds
-      
-    
-    
-    
-    
-    
